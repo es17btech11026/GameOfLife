@@ -2,7 +2,7 @@
 # AUTHOR		: ADIL TANVEER
 # LANGUAGE		: PYTHON3
 # DESCRIPTION	: This module simulates the Game of Life
-#				  For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules
+#				  For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
 # MODULE_DESCRIPTION("My kernel module - mykmod");
 # MODULE_AUTHOR("es17btech11026 [at] gmail.com");
@@ -158,8 +158,7 @@ class Game:
 
 		# Setup for animation
 		self.fig = Figure()
-		self.label = Label(root, text = 'Game of Life Simulation', font = ('Verdana', 15))\
-																			.pack(side = TOP, pady = 10) 		
+		self.label = (Label(root, text = 'Game of Life Simulation', font = ('Verdana', 15)).pack(side = TOP, pady = 10))
 		self.canvas = FigureCanvasTkAgg(self.fig, master = self.root)
 		self.canvas.get_tk_widget().pack(side = TOP, fill = BOTH, expand = 1)
 		self.ax = self.fig.add_subplot(111)
@@ -170,12 +169,14 @@ class Game:
 
 
 		# Start and Stop Buttons
-		self.stopButton = ttk.Button(self.root, text="Stop", \
-							command=lambda: self.stopButtonPress()).pack(side=BOTTOM, fill=BOTH,\
-																		 padx=5, pady=5, expand=1)		
-		self.startButton = ttk.Button(self.root, text="Start", \
-							command=lambda: self.startButtonPress()).pack(side=BOTTOM, fill=BOTH,\
-																			 padx=5, pady=5, expand=1)	
+		self.stopButton = (ttk.Button(self.root, text="Stop",
+							command=lambda: self.stopButtonPress()).pack(side=BOTTOM, fill=BOTH,
+							padx=5, pady=5, expand=1))
+
+		self.startButton = (ttk.Button(self.root, text="Start",
+							command=lambda: self.startButtonPress()).pack(side=BOTTOM, fill=BOTH,
+							padx=5, pady=5, expand=1)
+							)
 
 
 	#########################################################
