@@ -2,7 +2,7 @@
 # AUTHOR		: ADIL TANVEER
 # LANGUAGE		: PYTHON3
 # DESCRIPTION	: This module simulates the Game of Life
-#				  For details of the game refer ________
+#				  For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life#Rules
 
 # MODULE_DESCRIPTION("My kernel module - mykmod");
 # MODULE_AUTHOR("es17btech11026 [at] gmail.com");
@@ -24,9 +24,11 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 ############################################
 
 def about():
+	percentSign = "%"
 	print("DESCRIPTION :")
 	print("1. This module simulates the Game of Life")
-	print("2. For details of the rules of the game refer _______")
+	print("2. For details of the rules of the game refer https://en.wikipedia.org/wiki/Conway" \
+				+ percentSign + "27s_Game_of_Life#Rules")
 	print("3. The initial state of the universe is either random or has to be given as an input in a text file (only)")
 	print("4. The input file should only contain a 2D matrix of space separated integers with rows being separated by a newline")
 	print("5. For knowing the details of execution and operation of the module type the command:\n\tpython3 <filename> --usage")
