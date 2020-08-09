@@ -4,8 +4,8 @@
 # DESCRIPTION	: This module simulates the Game of Life
 # For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 
-# MODULE_DESCRIPTION("My kernel module - mykmod");
-# MODULE_AUTHOR("es17btech11026 [at] gmail.com");
+# MODULE_DESCRIPTION("My GoL module - myGoLMod");
+# MODULE_AUTHOR("es17btech11026@iith.ac.in");
 # MODULE_LICENSE("GPL")
 
 ###########################################
