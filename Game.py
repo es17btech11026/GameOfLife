@@ -2,7 +2,7 @@
 # AUTHOR		: ADIL TANVEER
 # LANGUAGE		: PYTHON3
 # DESCRIPTION	: This module simulates the Game of Life
-#				  For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+#				  For details of the game refer https://en.wikipedia.org/wiki/Conway%27s_Game_of_Lif
 
 # MODULE_DESCRIPTION("My kernel module - mykmod");
 # MODULE_AUTHOR("es17btech11026 [at] gmail.com");
@@ -171,7 +171,8 @@ class Game:
 		# Start and Stop Buttons
 		self.stopButton = (ttk.Button(self.root, text="Stop",
 							command=lambda: self.stopButtonPress()).pack(side=BOTTOM, fill=BOTH,
-							padx=5, pady=5, expand=1))
+							padx=5, pady=5, expand=1)
+							)
 
 		self.startButton = (ttk.Button(self.root, text="Start",
 							command=lambda: self.startButtonPress()).pack(side=BOTTOM, fill=BOTH,
