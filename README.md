@@ -14,8 +14,8 @@ For **simple execution** of the module type this command:
 python3 Game.py
 ```
 
-**Note:** For successful execution of the module make sure that the libraries used in the module
-are installed in the target platform and python3 (obviously) needs to be installed on the target platform.
+**Note:** For successful execution of the module make sure that the _**libraries**_ used in the module
+are _installed_ in the target platform and **python3** (obviously) needs to be _installed_ on the target platform.
 
 For other details about the **syntax of execution** for this module type this command:
 ```
