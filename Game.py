@@ -273,7 +273,7 @@ class Game:
 		rowBound = np.size(self.universe,0)
 		colBound = np.size(self.universe,1)
 
-		newUniverse = np.zeros((rowBound, colBound), dype = int)
+		newUniverse = np.zeros((rowBound, colBound), dtype = int)
 		
 		for cell in self.AliveCells:
 			newUniverse[cell[0]][cell[1]] = 1
@@ -315,7 +315,7 @@ readFlag = False
 
 # Read input
 inputUniverse = readInput()
-print("INPUT:\n",inputUniverse)
+# print("INPUT:\n",inputUniverse)
 print("Dimensions of the universe : %d x %d"%(height, width))
 print("fps rate of the animation : %d"%(fps))
 
