@@ -290,6 +290,8 @@ readFlag = False
 # Read input
 inputUniverse = readInput()
 # print("INPUT:\n",inputUniverse)
+print("Dimensions of the universe : %d x %d"%(height, width))
+print("fps rate of the animation : %d"%(fps))
 
 # Run the simulation
 root = Tk()
