@@ -51,8 +51,9 @@ def usageManual(height, width, fps):
 	print("1. --usage")
 	print("Eg: python3 <filename> --usage\n")
 	
-	print("2. --file <filename : type = string>\t (Note : File must be text file)")
-	print("Eg: python3 <filename> --file input.txt\t (Note : File must be present in the working directory)\n")
+	print("2. --file <filename : type = string>")
+	print("FILE FORMAT: \nThe input file should be a \n\ttext file ONLY and should \n\tONLY contain a 2D matrix of space separated INTEGERS with ROWS being separated by a NEWLINE")
+	print("Eg: python3 <filename> --file input.txt\t (Note : File must be present in the working directory in the format given above)\n")
 
 	print("3. --help")
 	print("Eg: python3 <filename> --help\n")
