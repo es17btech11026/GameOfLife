@@ -125,7 +125,8 @@ def readInput():
 			height = np.size(inputUniverse,0)
 			width = np.size(inputUniverse,1)
 		except:
-			print("Error:\nFile not found")
+			print("Error:\nUnable to read File\nPlease check that the file exists and is in the format given below:")
+			print("FORMAT: The input file should be a text file only and should contain a 2D matrix of space separated INTEGERS with rows being separated by a newline")
 			exit(1)	
 	else:
 		inputUniverse = np.random.randint(2, size = (height, width))
