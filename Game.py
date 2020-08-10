@@ -23,14 +23,30 @@ from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 ############################################
 
+def sanityCheck(inputUniverse):
+	rowBound = np.size(inputUniverse,0)
+	colBound = np.size(inputUniverse,1)
+
+	newUniverse = np.zeros((rowBound, colBound), dtype = int)
+
+	for i in range(0, rowBound):
+		for j in range(0, colBound):
+			newUniverse[i][j] = int(inputUniverse[i][j] % 2)
+
+	return newUniverse
+
 def about():
 	percentSign = "%"
 	print("DESCRIPTION :")
 	print("1. This module simulates the Game of Life")
 	print("2. For details of the rules of the game refer https://en.wikipedia.org/wiki/Conway" + percentSign + "27s_Game_of_Life#Rules")
-	print("3. The initial state of the universe is either random or has to be given as an input in a text file (only)")
-	print("4. The input file should only contain a 2D matrix of space separated integers with rows being separated by a newline")
-	print("5. For knowing the details of execution and operation of the module type the command:\n\tpython3 <filename> --usage")
+	print("3. The initial state of the universe is either random or has to be given as an input")
+	print("4. FILE FORMAT:")
+	print("\tThe input file should be a \n\t\ttext file ONLY and should")
+	print("\t\tONLY contain a binary 2D matrix of space separated INTEGERS(0s and 1s) with ROWS being separated by a NEWLINE")
+	print("\tNOTE : In case the input matrix is not binary, it will be converted to a binary matrix using modulus operator")
+
+	print("5. For knowing the details of execution and operation of this module type the command:\n\tpython3 <filename> --usage")
 
 def usageManual(height, width, fps):
 	print("USAGE MANUAL\n")
@@ -52,8 +68,11 @@ def usageManual(height, width, fps):
 	print("Eg: python3 <filename> --usage\n")
 	
 	print("2. --file <filename : type = string>")
-	print("FILE FORMAT: \nThe input file should be a \n\ttext file ONLY and should \n\tONLY contain a 2D matrix of space separated INTEGERS with ROWS being separated by a NEWLINE")
-	print("Eg: python3 <filename> --file input.txt\t (Note : File must be present in the working directory in the format given above)\n")
+	print("FILE FORMAT:")
+	print("The input file should be a \n\ttext file ONLY and should")
+	print("\tONLY contain a binary 2D matrix of space separated INTEGERS(0s and 1s) with ROWS being separated by a NEWLINE")
+	print("NOTE : In case the input matrix is not binary, it will be converted to a binary matrix using modulus operator")
+	print("Eg: python3 <filename> --file input.txt\t (NOTE : File must be present in the working directory in the format given above)\n")
 
 	print("3. --help")
 	print("Eg: python3 <filename> --help\n")
@@ -125,10 +144,16 @@ def readInput():
 			inputUniverse = np.loadtxt(fileName, dtype = int)
 			height = np.size(inputUniverse,0)
 			width = np.size(inputUniverse,1)
+
+			inputUniverse = sanityCheck(inputUniverse)
+
 		except:
 			print("Error:\nUnable to read File\nPlease check that the file exists and is in the format given below:")
-			print("FORMAT: The input file should be a text file only and should contain a 2D matrix of space separated INTEGERS with rows being separated by a newline")
-			exit(1)	
+			print("FILE FORMAT:")
+			print("The input file should be a \n\ttext file ONLY and should")
+			print("\tONLY contain a binary 2D matrix of space separated INTEGERS(0s and 1s) with ROWS being separated by a NEWLINE")
+			print("NOTE : In case the input matrix is not binary, it will be converted to a binary matrix using modulus operator")
+			exit(1)
 	else:
 		inputUniverse = np.random.randint(2, size = (height, width))
 
@@ -248,7 +273,7 @@ class Game:
 		rowBound = np.size(self.universe,0)
 		colBound = np.size(self.universe,1)
 
-		newUniverse = np.zeros((rowBound, colBound))
+		newUniverse = np.zeros((rowBound, colBound), dype = int)
 		
 		for cell in self.AliveCells:
 			newUniverse[cell[0]][cell[1]] = 1
@@ -290,7 +315,7 @@ readFlag = False
 
 # Read input
 inputUniverse = readInput()
-# print("INPUT:\n",inputUniverse)
+print("INPUT:\n",inputUniverse)
 print("Dimensions of the universe : %d x %d"%(height, width))
 print("fps rate of the animation : %d"%(fps))
 
